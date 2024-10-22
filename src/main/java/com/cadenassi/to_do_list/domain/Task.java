@@ -1,6 +1,7 @@
 package com.cadenassi.to_do_list.domain;
 
 import com.cadenassi.to_do_list.enums.DayEnum;
+import com.cadenassi.to_do_list.enums.PriorityEnum;
 import jakarta.persistence.*;
 
 import java.io.Serializable;

@@ -46,7 +46,8 @@ public class Task implements Serializable {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(!name.isBlank())
+            this.name = name;
     }
 
     public boolean isCompleted() {
@@ -62,7 +63,8 @@ public class Task implements Serializable {
     }
 
     public void setDay(DayEnum day) {
-        this.day = day;
+        if(day != null)
+            this.day = day;
     }
 
     public PriorityEnum getPriority() {
@@ -70,7 +72,8 @@ public class Task implements Serializable {
     }
 
     public void setPriority(PriorityEnum priority) {
-        this.priority = priority;
+        if(priority != null)
+            this.priority = priority;
     }
 
     @Override

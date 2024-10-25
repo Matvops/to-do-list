@@ -1,5 +1,7 @@
 package com.cadenassi.to_do_list.enums;
 
+import com.cadenassi.to_do_list.exceptions.ResourceNotFoundException;
+
 public enum PriorityEnum {
 
     BAIXA(1),
@@ -23,7 +25,7 @@ public enum PriorityEnum {
             if (priority.getPriorityCode() == i)
                 return priority;
 
-        return null;
+        throw new ResourceNotFoundException("PRIORITY NOT FOUND!");
     }
 
 }

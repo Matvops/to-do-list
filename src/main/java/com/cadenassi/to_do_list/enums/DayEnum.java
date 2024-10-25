@@ -1,5 +1,7 @@
 package com.cadenassi.to_do_list.enums;
 
+import com.cadenassi.to_do_list.exceptions.ResourceNotFoundException;
+
 public enum DayEnum {
 
     DOMINGO(1),
@@ -27,6 +29,6 @@ public enum DayEnum {
             if(day.getDayCode() == i)
                 return day;
 
-        return null;
+        throw new ResourceNotFoundException("DAY NOT FOUND!");
     }
 }

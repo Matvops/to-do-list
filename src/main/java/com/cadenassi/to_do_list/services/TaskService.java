@@ -55,13 +55,15 @@ public class TaskService {
         return task;
     }
 
-    public TaskDTO update(TaskDTO taskDTO, String id){
+    //CORRIGIR UPDATE DAY
+    public TaskDTO update(TaskDTO taskDTO, String id, String day){
         logger.info("Update a Task");
 
         checkDTO(taskDTO);
         checkString(id);
+        checkString(day);
 
-        var tasks = findByDay(taskDTO.getDay().name());
+        var tasks = findByDay(day);
 
         var dto = tasks.get(parseStringToInteger(id) - 1);
 

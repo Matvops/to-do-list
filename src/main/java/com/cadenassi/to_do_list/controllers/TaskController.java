@@ -25,7 +25,7 @@ public class TaskController {
     }
 
 
-    @GetMapping(name = "/{day}", produces = {MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(value = "/{day}", produces = {MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<List<TaskDTO>> findByDay(@PathVariable("day") String day) {
 
@@ -42,7 +42,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(task);
     }
 
-    @PutMapping(name = "/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PutMapping(value = "/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<TaskDTO> update(@RequestBody TaskDTO taskDTO, @PathVariable("day") String day,
                                           @PathVariable("id") String id) {
 
@@ -51,7 +51,7 @@ public class TaskController {
         return ResponseEntity.ok().body(task);
     }
 
-    @PutMapping(name = "/completed/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PutMapping(value = "/completed/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<TaskDTO> updateCompleted(@PathVariable("day") String day,@PathVariable("id") String id) {
 
         var task = service.updateCompleted(day, id);
@@ -59,7 +59,7 @@ public class TaskController {
         return ResponseEntity.ok().body(task);
     }
 
-    @DeleteMapping(name = "/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @DeleteMapping(value = "/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<Void> delete(@PathVariable("day") String day,@PathVariable("id") String id) {
 
         service.delete(day, id);

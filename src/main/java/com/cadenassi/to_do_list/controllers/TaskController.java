@@ -24,6 +24,7 @@ public class TaskController {
         return ResponseEntity.ok().body(tasks);
     }
 
+
     @GetMapping(name = "/{day}", produces = {MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<List<TaskDTO>> findByDay(@PathVariable("day") String day) {
@@ -50,7 +51,7 @@ public class TaskController {
         return ResponseEntity.ok().body(task);
     }
 
-    @PutMapping(name = "/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PutMapping(name = "/completed/{day}/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<TaskDTO> updateCompleted(@PathVariable("day") String day,@PathVariable("id") String id) {
 
         var task = service.updateCompleted(day, id);

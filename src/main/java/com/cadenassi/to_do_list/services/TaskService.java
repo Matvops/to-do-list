@@ -29,7 +29,6 @@ public class TaskService {
         logger.info("Find all tasks");
 
         var tasks = mapper.toDTOs(repository.findAll());
-
         return tasks;
     }
 
@@ -38,8 +37,7 @@ public class TaskService {
 
         checkString(day);
 
-        DayEnum dayEnum = DayEnum.valueOf(day.toUpperCase());
-
+        String dayEnum = day.toUpperCase();
         var tasks = mapper.toDTOs(repository.findByDayEnum(dayEnum));
 
         return tasks;

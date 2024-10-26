@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    @Query("SELECT t FROM Task t WHERE t.day LIKE LOWER(CONCAT('%', :day, '%'))")
-    List<Task> findByDayEnum(@Param("day")DayEnum day);
+    @Query("SELECT t FROM Task t WHERE CAST(t.day AS string) LIKE LOWER(CONCAT('%', :day, '%'))")
+    List<Task> findByDayEnum(@Param("day")String day);
+
 }

@@ -95,11 +95,11 @@ public class TaskServiceTests {
         tasks.removeIf(x -> x.getDay() != DayEnum.SEGUNDA);
         DTOs.removeIf(x -> x.getDay() != DayEnum.SEGUNDA);
 
-        when(repository.findByDayEnum(DayEnum.SEGUNDA)).thenReturn(tasks);
+        when(repository.findByDayEnum("SEGUNDA")).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);
 
         //ACTION
-        var obj = service.findByDay("SEGUNDA");
+        var obj = service.findByDay(DayEnum.SEGUNDA.name());
 
 
         //VALIDATION
@@ -119,7 +119,7 @@ public class TaskServiceTests {
         tasks.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
         DTOs.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
 
-        when(repository.findByDayEnum(DayEnum.DOMINGO)).thenReturn(tasks);
+        when(repository.findByDayEnum(DayEnum.DOMINGO.name())).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);
         when(repository.findById(taskDTO.getId())).thenReturn(Optional.of(tasks.getFirst()));
         when(repository.save(tasks.getFirst())).thenReturn(tasks.getFirst());
@@ -143,7 +143,7 @@ public class TaskServiceTests {
         tasks.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
         DTOs.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
 
-        when(repository.findByDayEnum(DayEnum.DOMINGO)).thenReturn(tasks);
+        when(repository.findByDayEnum(DayEnum.DOMINGO.name())).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);
         when(repository.findById(taskDTO.getId())).thenReturn(Optional.of(tasks.getFirst()));
         when(repository.save(tasks.getFirst())).thenReturn(tasks.getFirst());

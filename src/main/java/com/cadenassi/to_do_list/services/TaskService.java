@@ -25,6 +25,7 @@ public class TaskService {
     @Autowired
     private TaskMapper mapper;
 
+
     public List<TaskDTO> findAll(){
         logger.info("Find all tasks");
 
@@ -32,8 +33,9 @@ public class TaskService {
         return tasks;
     }
 
+
     public List<TaskDTO> findByDay(String day){
-        logger.info("Find dy day");
+        logger.info("Find by day");
 
         checkString(day);
 
@@ -42,6 +44,7 @@ public class TaskService {
 
         return tasks;
     }
+
 
     public TaskDTO insert(TaskDTO taskDTO){
         logger.info("Insert a task");

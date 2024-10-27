@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tasks")
+@Table(name = "tb_tasks")
 public class Task implements Serializable {
 
     @Id
@@ -24,7 +24,8 @@ public class Task implements Serializable {
     @Column(nullable = false)
     private DayEnum day;
 
-    @Column(columnDefinition = "enum default MODERADO")
+    @Column(columnDefinition = "enum('BAIXA', 'MODERADA', 'ALTA') DEFAULT 'MODERADA'")
+    @Enumerated(EnumType.STRING)
     private PriorityEnum priority;
 
     public Task() {

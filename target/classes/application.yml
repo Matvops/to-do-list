@@ -6,12 +6,12 @@ spring:
     password: walo1234
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
       show-sql: false
 springdoc:
-  paths-to-match: /tasks/v1/**
+  pathsToMatch: /tasks/v1/**
   swagger-ui:
     use-root-path: true

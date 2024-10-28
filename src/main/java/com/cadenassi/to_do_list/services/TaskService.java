@@ -41,7 +41,7 @@ public class TaskService {
 
         String dayEnum = day.toUpperCase();
         var tasks = mapper.toDTOs(repository.findByDayEnum(dayEnum));
-
+        System.out.println(tasks.get(0).getName() + tasks.getFirst().getId());
         return tasks;
     }
 
@@ -90,6 +90,7 @@ public class TaskService {
 
         var task = repository.findById(dto.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("RESOURCE NOT FOUND!"));
+
 
         task.setCompleted(!task.isCompleted());
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
 
+
 public class TaskDTO implements Serializable {
 
     @JsonIgnore
@@ -24,7 +25,8 @@ public class TaskDTO implements Serializable {
     public TaskDTO() {
     }
 
-    public TaskDTO(String name, boolean completed, DayEnum day, PriorityEnum priority) {
+    public TaskDTO(Long id, String name, boolean completed, DayEnum day, PriorityEnum priority) {
+        setId(id);
         this.name = name;
         this.completed = completed;
         this.day = day;
@@ -33,6 +35,10 @@ public class TaskDTO implements Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 
     public String getName() {

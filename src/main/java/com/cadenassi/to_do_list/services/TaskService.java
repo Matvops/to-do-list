@@ -1,5 +1,6 @@
 package com.cadenassi.to_do_list.services;
 
+import com.cadenassi.to_do_list.controllers.TaskController;
 import com.cadenassi.to_do_list.dto.TaskDTO;
 import com.cadenassi.to_do_list.enums.DayEnum;
 import com.cadenassi.to_do_list.exceptions.ObjectIsNullException;
@@ -9,6 +10,8 @@ import com.cadenassi.to_do_list.repositories.TaskRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -30,6 +33,8 @@ public class TaskService {
         logger.info("Find all tasks");
 
         var tasks = mapper.toDTOs(repository.findAll());
+        tasks.forEach(x -> x.add(linkTo(methodOn(TaskController.class).findAll()).withSelfRel()));
+
         return tasks;
     }
 
@@ -41,7 +46,8 @@ public class TaskService {
 
         String dayEnum = day.toUpperCase();
         var tasks = mapper.toDTOs(repository.findByDayEnum(dayEnum));
-        System.out.println(tasks.get(0).getName() + tasks.getFirst().getId());
+        tasks.forEach(x -> x.add(linkTo(methodOn(TaskController.class).findAll()).withSelfRel()));
+
         return tasks;
     }
 
@@ -52,7 +58,7 @@ public class TaskService {
         checkDTO(taskDTO);
 
         var task = mapper.toDTO(repository.save(mapper.toTask(taskDTO)));
-
+        task.add(linkTo(methodOn(TaskController.class).insert(task)).withSelfRel());
         return task;
     }
 
@@ -75,7 +81,10 @@ public class TaskService {
         task.setDay(taskDTO.getDay());
         task.setPriority(taskDTO.getPriority());
 
-        return mapper.toDTO(repository.save(task));
+        taskDTO = mapper.toDTO(repository.save(task));
+        taskDTO.add(linkTo(methodOn(TaskService.class).updateCompleted(day,id)).withSelfRel());
+
+        return taskDTO;
     }
 
     public TaskDTO updateCompleted(String day, String id){
@@ -94,7 +103,10 @@ public class TaskService {
 
         task.setCompleted(!task.isCompleted());
 
-        return mapper.toDTO(repository.save(task));
+        var taskDTO = mapper.toDTO(repository.save(task));
+        taskDTO.add(linkTo(methodOn(TaskController.class).updateCompleted(day,id)).withSelfRel());
+
+        return taskDTO;
     }
 
     public void delete(String day, String id){

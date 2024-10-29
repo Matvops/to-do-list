@@ -1,4 +1,4 @@
-package com.cadenassi.to_do_list.unittests.mockito;
+package com.cadenassi.to_do_list.unittests.mockito.unittests;
 
 import com.cadenassi.to_do_list.domain.Task;
 import com.cadenassi.to_do_list.dto.TaskDTO;
@@ -14,7 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +25,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TaskServiceTests {
+public class TaskServiceTestsWithMockito {
 
     @InjectMocks
     private TaskService service;

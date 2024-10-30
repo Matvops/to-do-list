@@ -18,6 +18,7 @@ public class AbstractIntegrationTest {
         static MySQLContainer<?> mySQL = new MySQLContainer<>("mysql:9.1.0");
 
         private static void startContainers(){
+
             Startables.deepStart(Stream.of(mySQL)).join();
         }
 

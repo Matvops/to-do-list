@@ -82,7 +82,7 @@ public class TaskService {
         task.setPriority(taskDTO.getPriority());
 
         taskDTO = mapper.toDTO(repository.save(task));
-        taskDTO.add(linkTo(methodOn(TaskService.class).updateCompleted(day,id)).withSelfRel());
+        taskDTO.add(linkTo(methodOn(TaskController.class).update(taskDTO, day, id)).withSelfRel());
 
         return taskDTO;
     }

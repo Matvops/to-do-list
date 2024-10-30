@@ -28,7 +28,8 @@ public class TaskController {
     @Operation(summary = "Find all tasks", description = "Find all tasks of all days", tags = {"Tasks"}, responses = {
             @ApiResponse(description = "SUCCESS", responseCode = "200",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
-            @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content(schema = @Schema))
+            @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
+            @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content)
     })
     public ResponseEntity<List<TaskDTO>> findAll() {
 
@@ -42,6 +43,7 @@ public class TaskController {
     @Operation(summary = "Find tasks by day", description = "Find all tasks of selected day", tags = {"Tasks"}, responses = {
             @ApiResponse(description = "SUCCESS", responseCode = "200",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
             @ApiResponse(description = "NOT FOUND", responseCode = "404", content = @Content),
             @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content)
     })
@@ -57,6 +59,7 @@ public class TaskController {
     @Operation(summary = "Insert task", description = "Insert task", tags = {"Tasks"}, responses = {
             @ApiResponse(description = "CREATED", responseCode = "201",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
             @ApiResponse(description = "NOT FOUND", responseCode = "404", content = @Content(schema = @Schema)),
             @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content(schema = @Schema))
     })
@@ -72,6 +75,7 @@ public class TaskController {
             responses = {
                     @ApiResponse(description = "SUCCESS", responseCode = "200",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+                    @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
                     @ApiResponse(description = "NOT FOUND", responseCode = "404", content = @Content(schema = @Schema)),
                     @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content(schema = @Schema))
             })
@@ -88,6 +92,7 @@ public class TaskController {
             responses = {
                     @ApiResponse(description = "SUCCESS", responseCode = "200",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+                    @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
                     @ApiResponse(description = "NOT FOUND", responseCode = "404", content = @Content(schema = @Schema)),
                     @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content(schema = @Schema))
             })
@@ -103,6 +108,7 @@ public class TaskController {
             responses = {
                     @ApiResponse(description = "NO CONTENT", responseCode = "204",
                             content = @Content(schema = @Schema)),
+                    @ApiResponse(description = "FORBIDDEN", responseCode = "403", content = @Content),
                     @ApiResponse(description = "NOT FOUND", responseCode = "404", content = @Content(schema = @Schema)),
                     @ApiResponse(description = "INTERNAL ERROR", responseCode = "500", content = @Content(schema = @Schema))
             })

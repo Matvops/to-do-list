@@ -13,6 +13,7 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import io.restassured.http.Header;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,7 +28,7 @@ import java.util.Map;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
+public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
 
     private static RequestSpecification specification;
     private static ObjectMapper mapper;
@@ -43,6 +44,22 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
 
     @Test
     @Order(0)
+    void corsOriginTest() {
+        given()
+                .basePath("/tasks/v1")
+                .port(TestConfigs.SERVER_PORT)
+                .accept(ContentType.JSON)
+                .filter(new RequestLoggingFilter(LogDetail.ALL))
+                .filter(new ResponseLoggingFilter(LogDetail.ALL))
+                .header("Origin", "http://localhost:3308")
+                .when()
+                .get()
+                .then()
+                .statusCode(403);
+    }
+
+    @Test
+    @Order(1)
     void findByDayTest() throws IOException {
 
         //PREPARATION
@@ -50,6 +67,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
                 .setBasePath("/tasks/v1")
                 .setAccept(ContentType.JSON)
                 .setPort(TestConfigs.SERVER_PORT)
+                .addHeader("Origin", "http://localhost:8080")
                 .addFilter(new RequestLoggingFilter(LogDetail.ALL))
                 .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
                 .build();
@@ -67,7 +85,8 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
                 .body()
                 .asString();
 
-        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>(){});
+        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>() {
+        });
 
         //VALIDATION
         assertNotNull(tasks);
@@ -76,7 +95,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void findAllTest() throws IOException {
 
         var content = given()
@@ -89,7 +108,8 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
                 .body()
                 .asString();
 
-        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>(){});
+        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>() {
+        });
 
         assertNotNull(tasks);
         assertEquals(51, tasks.size());
@@ -98,7 +118,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
 
 
     @Test
-    @Order(2)
+    @Order(3)
     void insertTest() throws IOException {
         createDTO();
 
@@ -124,7 +144,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     void updateCompletedTest() throws IOException {
 
         var content = given()
@@ -149,7 +169,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     void updateTest() throws IOException {
         taskDTO.setDay(null);
         taskDTO.setCompleted(true);
@@ -180,7 +200,7 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     void deleteTest() throws IOException {
 
         //ACTION
@@ -206,7 +226,8 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
                 .body()
                 .asString();
 
-        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>(){});
+        List<TaskDTO> tasks = mapper.readValue(content, new TypeReference<List<TaskDTO>>() {
+        });
 
         //VALIDATION
 
@@ -214,7 +235,8 @@ public class TaskServiceWithJsonTest extends AbstractIntegrationTest {
     }
 
 
-    private void createDTO(){
+
+    private void createDTO() {
         taskDTO.setName("Conversar com garotas");
         taskDTO.setCompleted(false);
         taskDTO.setDay(DayEnum.QUARTA);

@@ -1,0 +1,16 @@
+com\cadenassi\to_do_list\controllers\TaskController.class
+com\cadenassi\to_do_list\services\TaskService.class
+com\cadenassi\to_do_list\enums\DayEnum.class
+com\cadenassi\to_do_list\mappers\TaskMapper.class
+com\cadenassi\to_do_list\mappers\TaskMapperImpl.class
+com\cadenassi\to_do_list\dto\TaskDTO.class
+com\cadenassi\to_do_list\config\OpenApiConfig.class
+com\cadenassi\to_do_list\config\WebConfig.class
+com\cadenassi\to_do_list\exceptions\ResourceNotFoundException.class
+com\cadenassi\to_do_list\domain\Task.class
+com\cadenassi\to_do_list\enums\PriorityEnum.class
+com\cadenassi\to_do_list\exceptions\handler\CustomizedExceptionHandler.class
+com\cadenassi\to_do_list\ToDoListApplication.class
+com\cadenassi\to_do_list\exceptions\ExceptionResponse.class
+com\cadenassi\to_do_list\exceptions\ObjectIsNullException.class
+com\cadenassi\to_do_list\repositories\TaskRepository.class

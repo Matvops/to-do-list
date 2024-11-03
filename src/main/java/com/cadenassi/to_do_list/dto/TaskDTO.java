@@ -1,7 +1,5 @@
 package com.cadenassi.to_do_list.dto;
 
-import com.cadenassi.to_do_list.enums.DayEnum;
-import com.cadenassi.to_do_list.enums.PriorityEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.hateoas.RepresentationModel;
 

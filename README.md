@@ -1,4 +1,12 @@
-<h1 style="text-align:center">TO DO LIST 📋</h1>
+<h1 align="center">TO DO LIST 📋</h1>
+
+
+<div align="center">
+  <img src="https://img.shields.io/badge/languages-3-blue" alt="Languages">
+  <img src="https://img.shields.io/badge/Java-99.7%25-brightgreen" alt="Java">
+  <img src="https://img.shields.io/badge/made%20by-Matvops-blueviolet" alt="Made by Matvops">
+  <img src="https://img.shields.io/badge/last%20commit-03%20Nov%202024-blue" alt="Last Commit">
+</div> 
 
 <hr> <br>
 
@@ -196,7 +204,7 @@ utilizei o Swagger como documentação da API REST.</p>
 
 <br> <hr>
 
-<h2>FUTURAS IMPLEMENTAÇÕES ⏳</h2>
+<h2 id="futuro">FUTURAS IMPLEMENTAÇÕES ⏳</h2>
 
 <ol>
     <li>
@@ -221,5 +229,5 @@ utilizei o Swagger como documentação da API REST.</p>
 
 
 <br> <hr>
-<h3 style="text-align:center">Feito com ❤️ por Matvops
+<h3 align="center">Feito com ❤️ por Matvops
 👋 <a href="https://www.linkedin.com/in/matheus-cadenassi-799125321/">entre em contato!</a> </h3>

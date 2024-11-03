@@ -22,14 +22,14 @@ public class TaskDTO extends RepresentationModel<TaskDTO> implements Serializabl
 
     private boolean completed;
 
-    private DayEnum day;
+    private String day;
 
-    private PriorityEnum priority;
+    private String priority;
 
     public TaskDTO() {
     }
 
-    public TaskDTO(Long id, String name, boolean completed, DayEnum day, PriorityEnum priority) {
+    public TaskDTO(Long id, String name, boolean completed, String day, String priority) {
         setId(id);
         this.name = name;
         this.completed = completed;
@@ -61,19 +61,19 @@ public class TaskDTO extends RepresentationModel<TaskDTO> implements Serializabl
         this.completed = completed;
     }
 
-    public DayEnum getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(DayEnum day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
-    public PriorityEnum getPriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setPriority(PriorityEnum priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 

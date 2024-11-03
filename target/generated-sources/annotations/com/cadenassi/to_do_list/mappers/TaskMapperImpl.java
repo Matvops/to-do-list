@@ -5,6 +5,9 @@ import com.cadenassi.to_do_list.dto.TaskDTO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
+
+import com.cadenassi.to_do_list.enums.DayEnum;
+import com.cadenassi.to_do_list.enums.PriorityEnum;
 import org.springframework.stereotype.Component;
 
 @Generated(
@@ -21,12 +24,15 @@ public class TaskMapperImpl implements TaskMapper {
             return null;
         }
 
+        if(task.getDay().isBlank() || task.getPriority().isBlank())
+            return null;
+
         Task task1 = new Task();
 
         task1.setName( task.getName() );
         task1.setCompleted( task.isCompleted() );
-        task1.setDay( task.getDay() );
-        task1.setPriority( task.getPriority() );
+        task1.setDay(DayEnum.valueOf(task.getDay()));
+        task1.setPriority( PriorityEnum.valueOf(task.getPriority()) );
 
         return task1;
     }
@@ -42,8 +48,8 @@ public class TaskMapperImpl implements TaskMapper {
         taskDTO.setId( task.getId() );
         taskDTO.setName( task.getName() );
         taskDTO.setCompleted( task.isCompleted() );
-        taskDTO.setDay( task.getDay() );
-        taskDTO.setPriority( task.getPriority() );
+        taskDTO.setDay( task.getDay().toString().toUpperCase() );
+        taskDTO.setPriority( task.getPriority().toString().toUpperCase() );
 
         return taskDTO;
     }

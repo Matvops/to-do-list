@@ -2,10 +2,13 @@
 
 
 <div align="center">
-  <img src="https://img.shields.io/badge/languages-3-blue" alt="Languages">
-  <img src="https://img.shields.io/badge/Java-99.7%25-brightgreen" alt="Java">
-  <img src="https://img.shields.io/badge/made%20by-Matvops-blueviolet" alt="Made by Matvops">
-  <img src="https://img.shields.io/badge/last%20commit-03%20Nov%202024-blue" alt="Last Commit">
+    <img src="https://img.shields.io/badge/languages-2-green" alt="Languages">
+    <img src="https://img.shields.io/badge/Java-99.7%25-orange" alt="Java">
+    <img src="https://img.shields.io/badge/made%20by-Matvops-blue" alt="Made by Matvops">
+    <img src="https://img.shields.io/badge/last%20commit-03%20Nov%202024-blueviolet" alt="Last Commit">
+    <a href="https://www.linkedin.com/in/matheus-cadenassi-799125321/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-Matheus%20Cadenassi-blue" alt="LinkedIn">
+    </a>
 </div> 
 
 <hr> <br>

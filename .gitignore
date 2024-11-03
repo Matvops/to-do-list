@@ -1,7 +1,8 @@
+# Ignorar a pasta target, exceto o Maven Wrapper
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
+### STS (Spring Tool Suite) ###
 .apt_generated
 .classpath
 .factorypath
@@ -10,11 +11,9 @@
 .springBeans
 .sts4-cache
 
-
-# Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
+# Gerado por https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
 ### Eclipse ###
-
 .metadata
 bin/
 tmp/
@@ -30,22 +29,20 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
-# Locally stored "Eclipse launch configurations"
+# Configurações locais de "Eclipse launch"
 *.launch
 
-# PyDev specific (Python IDE for Eclipse)
+# PyDev (IDE Python para Eclipse)
 *.pydevproject
 
-# CDT-specific (C/C++ Development Tooling)
+# CDT-specific (Ferramentas de Desenvolvimento C/C++)
 .cproject
-
-# CDT- autotools
 .autotools
 
 # Java annotation processor (APT)
 .factorypath
 
-# PDT-specific (PHP Development Tools)
+# PDT-specific (Ferramentas de Desenvolvimento PHP)
 .buildpath
 
 # sbteclipse plugin
@@ -66,29 +63,17 @@ local.properties
 # Annotation Processing
 .apt_generated/
 
-# Scala IDE specific (Scala & Java development for Eclipse)
+# Scala IDE
 .cache-main
 .scala_dependencies
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core
 .project
-
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
-# Annotation Processing
-.apt_generated
-
-.sts4-cache/
-
 ### Git ###
-# Created by git for backups. To disable backups in Git:
-# $ git config --global mergetool.keepBackup false
 *.orig
-
-# Created by git when using merge tools for conflicts
 *.BACKUP.*
 *.BASE.*
 *.LOCAL.*
@@ -99,19 +84,10 @@ local.properties
 *_REMOTE_*.txt
 
 ### Java ###
-# Compiled class file
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -119,12 +95,9 @@ local.properties
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 ### Maven ###
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -133,31 +106,19 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
 
 ### Windows ###
-# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
-
-# Dump file
 *.stackdump
-
-# Folder config file
 [Dd]esktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msix
 *.msm
 *.msp
-
-# Windows shortcuts
 *.lnk
 
 ### IntelliJ IDEA ###
@@ -179,7 +140,7 @@ build/
 ### VS Code ###
 .vscode/
 
-### Some additional ignores (sort later)
+### Arquivos adicionais ###
 *.DS_Store
 *.sw?
 .#*

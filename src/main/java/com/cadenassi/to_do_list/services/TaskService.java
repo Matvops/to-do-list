@@ -2,7 +2,6 @@ package com.cadenassi.to_do_list.services;
 
 import com.cadenassi.to_do_list.controllers.TaskController;
 import com.cadenassi.to_do_list.dto.TaskDTO;
-import com.cadenassi.to_do_list.enums.DayEnum;
 import com.cadenassi.to_do_list.exceptions.ObjectIsNullException;
 import com.cadenassi.to_do_list.exceptions.ResourceNotFoundException;
 import com.cadenassi.to_do_list.mappers.TaskMapper;
@@ -12,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
 import java.util.List;
 import java.util.logging.Logger;
+
+/**
+ * @author Matheus
+ */
 
 @Service
 public class TaskService {
@@ -74,7 +76,7 @@ public class TaskService {
     }
 
 
-    /** Update a task filtered by day and selected by ID (except the 'completed' attribute)
+    /** Update a task filtered by day and selected by ID
      * @param taskDTO TaskDTO - task that will be modified
      * @param id String - id that go select
      * @param day String - day that go filter
@@ -86,6 +88,8 @@ public class TaskService {
         checkDTO(taskDTO);
         checkString(id);
         checkString(day);
+
+
 
         var tasks = findByDay(day);
 

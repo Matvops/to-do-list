@@ -9,6 +9,9 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Matheus
+ */
 
 public class TaskDTO extends RepresentationModel<TaskDTO> implements Serializable {
 

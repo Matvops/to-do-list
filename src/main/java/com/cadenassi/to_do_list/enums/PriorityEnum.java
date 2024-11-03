@@ -2,6 +2,10 @@ package com.cadenassi.to_do_list.enums;
 
 import com.cadenassi.to_do_list.exceptions.ResourceNotFoundException;
 
+/**
+ * @author Matheus
+ */
+
 public enum PriorityEnum {
 
     BAIXA(1),

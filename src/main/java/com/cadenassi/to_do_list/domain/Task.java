@@ -7,6 +7,10 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Matheus
+ */
+
 @Entity
 @Table(name = "tasks")
 public class Task implements Serializable {

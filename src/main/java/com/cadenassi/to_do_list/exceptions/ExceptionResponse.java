@@ -3,6 +3,10 @@ package com.cadenassi.to_do_list.exceptions;
 import java.io.Serializable;
 import java.time.Instant;
 
+/**
+ * @author Matheus
+ */
+
 public class ExceptionResponse implements Serializable {
 
     private Instant timestamp;

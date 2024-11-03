@@ -11,6 +11,10 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.time.Instant;
 
+/**
+ * @author Matheus
+ */
+
 @ControllerAdvice
 public class CustomizedExceptionHandler{
 

@@ -7,6 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 import static io.restassured.RestAssured.given;
 
+/**
+ * @author Matheus
+ */
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class OpenAPITest extends AbstractIntegrationTest {
 

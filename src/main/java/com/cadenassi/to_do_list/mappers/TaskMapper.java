@@ -7,6 +7,10 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+/**
+ * @author Matheus
+ */
+
 @Mapper(componentModel = "spring")
 public interface TaskMapper {
 

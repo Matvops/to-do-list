@@ -5,38 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32eb1403-6c12-46b0-8137-6b29057192bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/ToDoListApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/ToDoListApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/config/OpenApiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/controllers/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/domain/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/domain/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/dto/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/dto/TaskDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/enums/DayEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/enums/DayEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/enums/PriorityEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/enums/PriorityEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/exceptions/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/exceptions/ExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/exceptions/handler/CustomizedExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/exceptions/handler/CustomizedExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/mappers/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/mappers/TaskMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/repositories/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cadenassi/to_do_list/services/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/TaskControllerWithJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/TaskControllerWithJsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/swagger/OpenAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/swagger/OpenAPITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/testcontainers/AbstractIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/integrationtests/testcontainers/AbstractIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/mocks/TaskMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/mocks/TaskMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/unittests/TaskServiceTestsWithMockito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cadenassi/to_do_list/unittests/mockito/unittests/TaskServiceTestsWithMockito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/ToDoListApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/ToDoListApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/config/OpenApiConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/config/OpenApiConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/controllers/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/controllers/TaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/domain/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/domain/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/dto/TaskDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/dto/TaskDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/enums/DayEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/enums/DayEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/enums/PriorityEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/enums/PriorityEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/exceptions/ExceptionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/exceptions/ExceptionResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/exceptions/handler/CustomizedExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/exceptions/handler/CustomizedExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/services/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cadenassi/to_do_list/services/TaskService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/cadenassi/to_do_list/mappers/TaskMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/cadenassi/to_do_list/mappers/TaskMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +39,7 @@
     "JUnit.TaskControllerWithJsonTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "case-insensitive",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Matheus/IdeaProjects/projectToDoLIst/to-do-list"

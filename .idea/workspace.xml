@@ -40,7 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ToDoListApplication.executor": "Debug",
+    "Application.ToDoListApplication.executor": "Run",
     "JUnit.TaskControllerWithJsonTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",

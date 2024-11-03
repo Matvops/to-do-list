@@ -20,6 +20,7 @@ public interface TaskMapper {
 
     @Mapping(source = "priority", target = "priority")
     @Mapping(source = "day", target = "day")
+    @Mapping(source = "id", target = "id")
     TaskDTO toDTO(Task task);
 
     List<Task> toTasks(List<TaskDTO> tasks);

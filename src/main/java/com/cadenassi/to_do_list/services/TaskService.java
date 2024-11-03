@@ -2,6 +2,8 @@ package com.cadenassi.to_do_list.services;
 
 import com.cadenassi.to_do_list.controllers.TaskController;
 import com.cadenassi.to_do_list.dto.TaskDTO;
+import com.cadenassi.to_do_list.enums.DayEnum;
+import com.cadenassi.to_do_list.enums.PriorityEnum;
 import com.cadenassi.to_do_list.exceptions.ObjectIsNullException;
 import com.cadenassi.to_do_list.exceptions.ResourceNotFoundException;
 import com.cadenassi.to_do_list.mappers.TaskMapper;
@@ -68,9 +70,14 @@ public class TaskService {
         logger.info("Insert a task");
 
         checkDTO(taskDTO);
+        checkString(taskDTO.getDay());
+        checkString(taskDTO.getPriority());
+        taskDTO.setDay(taskDTO.getDay().toUpperCase());
+        taskDTO.setPriority(taskDTO.getPriority().toUpperCase());
+
 
         var task = mapper.toDTO(repository.save(mapper.toTask(taskDTO)));
-        task = addHateoas(taskDTO);
+        task = addHateoas(task);
 
         return task;
     }
@@ -88,8 +95,8 @@ public class TaskService {
         checkDTO(taskDTO);
         checkString(id);
         checkString(day);
-
-
+        checkString(taskDTO.getDay());
+        checkString(taskDTO.getPriority());
 
         var tasks = findByDay(day);
 
@@ -99,8 +106,9 @@ public class TaskService {
                 .orElseThrow(() -> new ResourceNotFoundException("RESOURCE NOT FOUND!"));
 
         task.setName(taskDTO.getName());
-        task.setDay(taskDTO.getDay());
-        task.setPriority(taskDTO.getPriority());
+        task.setDay(DayEnum.valueOf(taskDTO.getDay().toUpperCase()));
+        task.setPriority(PriorityEnum.valueOf(taskDTO.getPriority().toUpperCase()));
+        task.setCompleted(taskDTO.isCompleted());
 
         taskDTO = mapper.toDTO(repository.save(task));
         taskDTO = addHateoas(taskDTO);

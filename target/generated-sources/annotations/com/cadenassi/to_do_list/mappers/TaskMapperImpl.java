@@ -2,17 +2,16 @@ package com.cadenassi.to_do_list.mappers;
 
 import com.cadenassi.to_do_list.domain.Task;
 import com.cadenassi.to_do_list.dto.TaskDTO;
+import com.cadenassi.to_do_list.enums.DayEnum;
+import com.cadenassi.to_do_list.enums.PriorityEnum;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
-
-import com.cadenassi.to_do_list.enums.DayEnum;
-import com.cadenassi.to_do_list.enums.PriorityEnum;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-02T21:10:17-0300",
+    date = "2024-11-03T14:18:29-0300",
     comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -24,15 +23,16 @@ public class TaskMapperImpl implements TaskMapper {
             return null;
         }
 
-        if(task.getDay().isBlank() || task.getPriority().isBlank())
-            return null;
-
         Task task1 = new Task();
 
+        if ( task.getPriority() != null ) {
+            task1.setPriority( Enum.valueOf( PriorityEnum.class, task.getPriority() ) );
+        }
+        if ( task.getDay() != null ) {
+            task1.setDay( Enum.valueOf( DayEnum.class, task.getDay() ) );
+        }
         task1.setName( task.getName() );
         task1.setCompleted( task.isCompleted() );
-        task1.setDay(DayEnum.valueOf(task.getDay()));
-        task1.setPriority( PriorityEnum.valueOf(task.getPriority()) );
 
         return task1;
     }
@@ -45,11 +45,15 @@ public class TaskMapperImpl implements TaskMapper {
 
         TaskDTO taskDTO = new TaskDTO();
 
+        if ( task.getPriority() != null ) {
+            taskDTO.setPriority( task.getPriority().name() );
+        }
+        if ( task.getDay() != null ) {
+            taskDTO.setDay( task.getDay().name() );
+        }
         taskDTO.setId( task.getId() );
         taskDTO.setName( task.getName() );
         taskDTO.setCompleted( task.isCompleted() );
-        taskDTO.setDay( task.getDay().toString().toUpperCase() );
-        taskDTO.setPriority( task.getPriority().toString().toUpperCase() );
 
         return taskDTO;
     }

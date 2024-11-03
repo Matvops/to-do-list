@@ -56,7 +56,7 @@ public class TaskMock {
         List<TaskDTO> tasks = new ArrayList<>();
 
         for(int i = 1; i < 8; i++){
-            tasks.add(new TaskDTO((long) i, "TASK" + i, false, DayEnum.getDay(i), PriorityEnum.BAIXA));
+            tasks.add(new TaskDTO((long) i, "TASK" + i, false, DayEnum.getDay(i).toString(), PriorityEnum.BAIXA.toString()));
         }
 
         return tasks;

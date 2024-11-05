@@ -35,9 +35,9 @@ public class TaskMock {
     public TaskDTO createTaskDTO(int i){
         TaskDTO task = new TaskDTO();
         task.setCompleted(false);
-        task.setDay(DayEnum.getDay(i));
+        task.setDay(DayEnum.getDay(i).toString());
         task.setName("TASK" + i);
-        task.setPriority(PriorityEnum.BAIXA);
+        task.setPriority(PriorityEnum.BAIXA.toString());
 
         return task;
     }
@@ -46,7 +46,7 @@ public class TaskMock {
         List<Task> tasks = new ArrayList<>();
 
         for(int i = 1; i < 8; i++){
-           tasks.add(new Task("TASK" + i, false, DayEnum.getDay(i), PriorityEnum.BAIXA));
+           tasks.add(createTask(i));
         }
 
         return tasks;
@@ -56,7 +56,7 @@ public class TaskMock {
         List<TaskDTO> tasks = new ArrayList<>();
 
         for(int i = 1; i < 8; i++){
-            tasks.add(new TaskDTO((long) i, "TASK" + i, false, DayEnum.getDay(i).toString(), PriorityEnum.BAIXA.toString()));
+            tasks.add(createTaskDTO(i));
         }
 
         return tasks;

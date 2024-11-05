@@ -177,7 +177,7 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
     void updateTest() throws IOException {
         taskDTO.setDay(null);
         taskDTO.setCompleted(true);
-        taskDTO.setPriority(PriorityEnum.BAIXA);
+        taskDTO.setPriority(PriorityEnum.BAIXA.toString());
 
         var content = given()
                 .spec(specification)
@@ -199,8 +199,8 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
 
         assertNotNull(task);
         assertTrue(task.isCompleted());
-        assertEquals(DayEnum.QUARTA, task.getDay());
-        assertEquals(PriorityEnum.BAIXA, task.getPriority());
+        assertEquals(DayEnum.QUARTA.toString(), task.getDay().toString());
+        assertEquals(PriorityEnum.BAIXA.toString(), task.getPriority().toString());
     }
 
     @Test
@@ -243,7 +243,7 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
     private void createDTO() {
         taskDTO.setName("Conversar com garotas");
         taskDTO.setCompleted(false);
-        taskDTO.setDay(DayEnum.QUARTA);
-        taskDTO.setPriority(PriorityEnum.ALTA);
+        taskDTO.setDay(DayEnum.QUARTA.toString());
+        taskDTO.setPriority(PriorityEnum.ALTA.toString());
     }
 }

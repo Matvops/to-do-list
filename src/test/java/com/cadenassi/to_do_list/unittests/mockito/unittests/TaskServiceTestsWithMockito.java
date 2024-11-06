@@ -95,7 +95,7 @@ public class TaskServiceTestsWithMockito {
         List<TaskDTO> DTOs = mock.createTasksDTO();
 
         tasks.removeIf(x -> x.getDay() != DayEnum.SEGUNDA);
-        DTOs.removeIf(x -> x.getDay() != DayEnum.SEGUNDA);
+        DTOs.removeIf(x -> x.getDay() != DayEnum.SEGUNDA.toString());
 
         when(repository.findByDayEnum("SEGUNDA")).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);
@@ -106,7 +106,7 @@ public class TaskServiceTestsWithMockito {
 
         //VALIDATION
         assertEquals(1, obj.size());
-        assertEquals(DayEnum.SEGUNDA, obj.getFirst().getDay());
+        assertEquals(DayEnum.SEGUNDA.toString(), obj.getFirst().getDay());
     }
 
 
@@ -116,10 +116,10 @@ public class TaskServiceTestsWithMockito {
         //PREPARATION
         List<Task> tasks = mock.createTasks();
         List<TaskDTO> DTOs = mock.createTasksDTO();
-        TaskDTO taskDTO = mock.createTaskDTO(2);
+        TaskDTO taskDTO = mock.createTaskDTO(1);
 
         tasks.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
-        DTOs.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
+        DTOs.removeIf(x -> !DayEnum.DOMINGO.toString().equals(x.getDay()));
 
         when(repository.findByDayEnum(DayEnum.DOMINGO.name())).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);
@@ -132,7 +132,7 @@ public class TaskServiceTestsWithMockito {
 
         //VALIDATION
         assertNotNull(obj);
-        assertEquals(DayEnum.SEGUNDA, obj.getDay());
+        assertEquals(DayEnum.DOMINGO.toString(), obj.getDay());
     }
 
     @Order(4)
@@ -143,7 +143,7 @@ public class TaskServiceTestsWithMockito {
         TaskDTO taskDTO = mock.createTaskDTO();
 
         tasks.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
-        DTOs.removeIf(x -> x.getDay() != DayEnum.DOMINGO);
+        DTOs.removeIf(x -> x.getDay() != DayEnum.DOMINGO.toString());
 
         when(repository.findByDayEnum(DayEnum.DOMINGO.name())).thenReturn(tasks);
         when(mapper.toDTOs(tasks)).thenReturn(DTOs);

@@ -34,6 +34,7 @@ public class TaskMock {
 
     public TaskDTO createTaskDTO(int i){
         TaskDTO task = new TaskDTO();
+        task.setId((long) i);
         task.setCompleted(false);
         task.setDay(DayEnum.getDay(i).toString());
         task.setName("TASK" + i);

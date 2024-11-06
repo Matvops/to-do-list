@@ -94,7 +94,7 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
 
         //VALIDATION
         assertNotNull(tasks);
-        tasks.forEach(x -> assertEquals(DayEnum.QUARTA, x.getDay()));
+        tasks.forEach(x -> assertEquals(DayEnum.QUARTA.toString(), x.getDay()));
         assertEquals(7, tasks.size());
     }
 
@@ -143,8 +143,8 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
         assertNotNull(task);
         assertFalse(task.isCompleted());
         assertEquals("Conversar com garotas", task.getName());
-        assertEquals(DayEnum.QUARTA, task.getDay());
-        assertEquals(PriorityEnum.ALTA, task.getPriority());
+        assertEquals(DayEnum.QUARTA.toString(), task.getDay());
+        assertEquals(PriorityEnum.ALTA.toString(), task.getPriority());
     }
 
     @Test
@@ -169,21 +169,21 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
 
         assertNotNull(task);
         assertTrue(task.isCompleted());
-        assertEquals(DayEnum.QUARTA, task.getDay());
+        assertEquals(DayEnum.QUARTA.toString(), task.getDay());
     }
 
     @Test
     @Order(5)
     void updateTest() throws IOException {
-        taskDTO.setDay(null);
+        taskDTO.setDay(DayEnum.SEGUNDA.name());
         taskDTO.setCompleted(true);
         taskDTO.setPriority(PriorityEnum.BAIXA.toString());
 
         var content = given()
                 .spec(specification)
                 .pathParams(Map.of(
-                        "day", "QUARTA",
-                        "id", "8"
+                        "day", "DOMINGO",
+                        "id", "2"
                 ))
                 .contentType(ContentType.JSON)
                 .body(taskDTO)
@@ -199,7 +199,7 @@ public class TaskControllerWithJsonTest extends AbstractIntegrationTest {
 
         assertNotNull(task);
         assertTrue(task.isCompleted());
-        assertEquals(DayEnum.QUARTA.toString(), task.getDay().toString());
+        assertEquals(DayEnum.SEGUNDA.toString(), task.getDay().toString());
         assertEquals(PriorityEnum.BAIXA.toString(), task.getPriority().toString());
     }
 

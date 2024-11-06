@@ -127,7 +127,7 @@ utilizei o Swagger como documentação da API REST.</p>
 <h4>Acesse o diretório do projeto</h4>
 
 <pre>
-    <code>cd seu_repositorio</code>
+    <code>cd to-do-list</code>
 </pre>
 
 <h4>Excecute o Projeto com Docker</h4>
